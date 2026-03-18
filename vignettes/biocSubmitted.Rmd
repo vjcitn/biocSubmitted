@@ -45,6 +45,11 @@ prompts and suggestions for summarization.
 analyze_repo_vignette(allu[1])
 ```
 
+# A workflow
+
+The `classify_packages` function will produce structured documents in
+markdown and html.
+
 ```{r workflow,eval=FALSE}
 ans = lapply(allu, function(x) {Sys.sleep(2); try(analyze_repo_vignette(x))})
 bad = sapply(ans, function(x) inherits(x, "try-error"))
