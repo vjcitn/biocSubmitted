@@ -44,3 +44,14 @@ prompts and suggestions for summarization.
 ```{r lk3}
 analyze_repo_vignette(allu[1])
 ```
+
+```{r workflow,eval=FALSE}
+ans = lapply(allu, function(x) {Sys.sleep(2); try(analyze_repo_vignette(x))})
+bad = sapply(ans, function(x) inherits(x, "try-error"))
+if (any(bad)) {
+  badi = which(bad)
+  ans = ans[-badi]
+  }
+jsonlite::write_json(ans, "newdemo.json")
+classify_packages("newdemo.json")
+```
