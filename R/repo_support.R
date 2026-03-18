@@ -32,3 +32,17 @@ build_vignette_path <- function(ghuser, ghrepo, vname) {
   )
 }
 
+#' given the 'body' in an issue response from Bioc contributions,
+#' extract the repository URL
+#' @param text a character string expected to include a single GitHub repo URL
+#' @export
+extract_repo_from_body=function(text) {
+   match <- regmatches(
+     text,
+     regexpr("Repository:\\s*(https://github\\.com/[^\\s]+)", text, perl = TRUE)
+   )
+   
+   if (length(match) == 0) return(NA_character_)
+   
+   sub("Repository:\\s*", "", match)
+ }

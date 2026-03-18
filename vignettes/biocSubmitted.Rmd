@@ -1,0 +1,46 @@
+---
+title: "biocSubmitted: analyze repository content for packages submitted to Bioconductor"
+shorttitle: "outlier dytection methods"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{biocSubmitted: LLM-based analysis of repository content for R packages}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Introduction
+
+This package is intended to be part of a workflow that summarizes packages
+submitted to Bioconductor.  This code assumes that `GITHUB_TOKEN` and
+a suitable LLM API token (default expectation is `ANTHROPIC_API_KEY`) is available to 
+`Sys.getenv`.
+
+Illustration:
+
+- Get existing open issues
+
+```{r lk1, message=FALSE}
+library(biocSubmitted)
+alliss = get_issues()
+```
+
+- Extract repository URLs
+
+```{r lk2}
+allu = vapply(alliss, function(x) extract_repo_from_body(x$body), character(1))
+head(allu)
+```
+
+- Analyze content for a repository.  This uses a function `vig2data` with specific
+prompts and suggestions for summarization.
+
+```{r lk3}
+analyze_repo_vignette(allu[1])
+```

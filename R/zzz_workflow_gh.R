@@ -21,6 +21,7 @@
 
 #' @importFrom httr GET add_headers headers status_code stop_for_status content
 #' @importFrom jsonlite fromJSON
+#' @import memoise
 NULL
 
 #' Get GitHub authentication token

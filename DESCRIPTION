@@ -10,6 +10,7 @@ Authors@R:
 Description: LLM-based analysis of packages submitted to bioconductor.
 Depends: R (>= 4.0.0), tools, utils, ellmer, mcptools
 Suggests: knitr, BiocStyle, testthat, rmarkdown
+Imports: memoise, curl
 License: Artistic-2.0
 VignetteBuilder: knitr
 biocViews: Infrastructure
