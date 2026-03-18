@@ -1,4 +1,6 @@
-# R Packages for Genomics & Computational Biology
+# R Packages for Genomics & Computational Biology under review at Bioconductor
+
+## Experimental classification
 
 *98 packages across 10 categories*
 
