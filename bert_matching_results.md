@@ -1,4 +1,4 @@
-| Query Term | Match 1 | Score 1 | Match 2 | Score 2 | Match 3 | Score 3 |
+| Query Term (vig2data) | EDAM Match 1 | Score 1 | Match 2 | Score 2 | Match 3 | Score 3 |
 |---|---|---|---|---|---|---|
 | <UNKNOWN> | unpure | 0.8724 | Protein name (UniProt) | 0.8717 | notRecommendedForAnnotation | 0.8689 |
 | 1000 Genomes Project | Whole genome sequencing | 0.9110 | NCBI Genome Project ID | 0.8960 | Genome resequencing | 0.8869 |
